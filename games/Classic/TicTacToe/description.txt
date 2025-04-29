@@ -1,0 +1,1 @@
+Two players take turns marking spaces in a 3x3 grid. The first to get three of their marks in a row (horizontally, vertically, or diagonally) wins.

@@ -29,7 +29,9 @@ let playerSides = {
     0: o
 };
 
-
+replayYesBtn.addEventListener('click', () => {
+    runGame()
+})
 
 runGame()
 
@@ -60,11 +62,21 @@ function runGame() {
         disableElement(xSide.children[0])
         disableElement(oSide.children[0])
 
-        if (winner === 0) colorGrid(oBorderColor, bgBody, winner)
-        else if (winner === 1) colorGrid(xBorderColor, bgBody, winner)
+        if (winner === 0) {
+            infoSpan.innerHTML = o + " wins"
+            colorGrid(oBorderColor, bgBody, winner)
+        }
+        else if (winner === 1) {
+            infoSpan.innerHTML = x + " wins"
+            colorGrid(xBorderColor, bgBody, winner)
+        }
         else {
+            infoSpan.innerHTML = 'Draw'
+
             colorGrid(defaultBorderColor, bgDraw, winner)
         }
+
+        modalBtn.click()
     }
     controlGrid()
     function controlGrid() {
